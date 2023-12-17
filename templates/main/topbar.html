@@ -1,0 +1,22 @@
+{% load static %}
+<nav class="">
+    <div class="site-logo">
+      <img class="pulse-animation" src="{% static 'main/images/logo.svg' %}" alt="">
+    </div>
+
+    <div class="nav-topbar flex-container">
+        <div class="nav-element">
+            <a href="{% url 'home' %}">Главная</a>
+        </div>
+        <div class="nav-element">
+            <a href="{% url 'news' %}">Новости</a>
+        </div>
+        <div class="nav-element">
+            <a href="{% url 'add_news' %}">Предложите новость</a>
+        </div>
+        <div class="nav-element">
+            <a href="{% url 'about' %}">О нас</a>
+        </div>
+    </div>
+
+</nav>

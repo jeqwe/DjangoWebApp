@@ -1,0 +1,12 @@
+{% load static %}
+{% if status == True %}
+    <div class="status-message flex-element">
+        <p><img src="{% static 'main/images/succes.gif' %}" alt=""></p>
+        <p class="hover-text">Новость успешно добавлена.</p>
+    </div>
+{% else %}
+    <div class="status-message flex-element">
+        <p><img src="{% static 'main/images/error.gif' %}" alt=""></p>
+        <p class="hover-text">Неизвестная ошибка при добавлении новости.</p>
+    </div>
+{% endif %}

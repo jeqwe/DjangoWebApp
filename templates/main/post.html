@@ -1,0 +1,45 @@
+{% extends 'main/template.html' %}
+{% load static %}
+{% block title %}
+
+    {{ post.title }}
+
+{% endblock %}
+
+{% block content %}
+    <div class="post-content">
+    <h1> {{ post.title }} </h1>
+        <br>
+        <br>
+        {% if post.photo %}
+            <div class="post-photo">
+
+            <img class="" src="{{ post.photo.url }}" alt="">
+
+            </div>
+        {% else %}
+            <div class="post-photo">
+
+            <img class="" src="{% static 'main/images/default-news-image.jpg' %}" alt="">
+
+            </div>
+        {% endif %}
+        <br>
+        <br>
+    <div class="flex-container post-meta-info">
+        <div class="post-date"> {{ post.creation_date }}</div>
+        <div class="post-author"> <i class="fa fa-user" aria-hidden="true"></i>    {{ post.author }}</div>
+    </div>
+        <br>
+        <br>
+    <h4 class="post-teaser"> {{ post.teaser }}</h4>
+        <br>
+        <br>
+        <p class="post-text">
+        {{ post.text }}
+        </p>
+        <br>
+        <br>
+    </div>
+
+{% endblock %}

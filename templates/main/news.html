@@ -1,0 +1,30 @@
+{% extends 'main/template.html' %}
+{% load static %}
+{% block title %}
+
+
+
+{% endblock %}
+
+{% block content %}
+    <div class="flex-container">
+        {% for element in posts %}
+            <div class="flex-element ">
+                <!-- <a class="no-text-decoration" href="news/{{ element.slug }}"> -->
+                <a class="no-text-decoration" href="{% url 'post_by_slug' element.slug %}">
+                <div class="post-container flex-element">
+
+                    {% if element.photo %}
+                        <p><img class="news_preview" src="{{ element.photo.url }}" alt=""></p>
+                    {% else %}
+                        <p><img class="news_preview" src="{% static 'main/images/default-news-image.jpg' %}" alt=""></p>
+                    {% endif %}
+                    <p class="post-date"> {{ element.creation_date }}</p>
+                    <p> {{ element.title }}</p>
+                    <p class="news-teaser"> {{ element.teaser }}</p>
+                </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

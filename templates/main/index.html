@@ -1,0 +1,36 @@
+{% extends 'main/template.html' %}
+{% load static %}
+{% block title %}
+Главная
+{% endblock %}
+
+{% block content %}
+
+    <p class="hover-text">Данное веб-приложение разработано с помощью фреймворка Django в учебных целях
+        и не пытается задеть чьи-либо личные чувства, либо нарушить юридические права.</p>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="flex-element last-news">
+    <h2>Последняя новость</h2>
+    <h3>{{ last_post.title }}</h3>
+    {% if last_post.photo %}
+            <div class="post-photo">
+
+            <img class="" style="width: 300px;" src="{{ last_post.photo.url }}" alt="">
+
+            </div>
+        {% else %}
+            <div class="post-photo">
+
+            <img class="" style="width: 300px;" src="{% static 'main/images/default-news-image.jpg' %}" alt="">
+
+            </div>
+        {% endif %}
+    <p class="post-text"> {{ last_post.teaser }}</p>
+        <a href="{% url 'post_by_slug' last_post.slug %}" class="no-text-decoration read-more"><p>Читать полностью
+             <i class="fa fa-arrow-right"></i></p></a>
+    </div>
+{% endblock %}
