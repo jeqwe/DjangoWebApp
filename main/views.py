@@ -57,3 +57,7 @@ def add_news(request):
 
 def about(request):
     return render(request, 'main/about.html')
+
+
+def error_404(request, exception):
+    return render(request, 'main/404.html', status=404)

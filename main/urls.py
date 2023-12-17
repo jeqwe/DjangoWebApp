@@ -1,5 +1,8 @@
 from main import views
 from django.urls import path
+from django.conf.urls import handler404
+
+handler404 = 'main.views.error_404'
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -10,3 +13,5 @@ urlpatterns = [
     path('news/<slug:post_slug>', views.get_news_by_slug, name='post_by_slug'),
 
 ]
+
+
