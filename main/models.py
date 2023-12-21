@@ -21,6 +21,7 @@ class News(models.Model):
                                     'Ab commodi, consectetur dolores in iusto magni, nesciunt nulla '
                                     'possimus provident quis quos saepe? Animi cum distinctio dolore '
                                     'dolores et tempore, totam?')
+    moderated = models.BooleanField(verbose_name="Опубликовать", default=False)
 
     def __str__(self):
         return self.title
@@ -33,5 +34,6 @@ class News(models.Model):
     def save(
         self, force_insert=False, force_update=False, using=None, update_fields=None
     ):
-        self.slug = slugify(self.title)
+        if not self.slug:
+            self.slug = slugify(self.title)
         super().save(force_insert, force_update, using, update_fields)

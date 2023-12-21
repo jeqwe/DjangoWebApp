@@ -31,7 +31,7 @@ def get_news_by_id(request, post_id):
 
 
 def news(request):
-    posts = News.objects.all()
+    posts = News.objects.filter(moderated=True)
     context = {
         'posts': posts,
     }
