@@ -34,6 +34,5 @@ class News(models.Model):
     def save(
         self, force_insert=False, force_update=False, using=None, update_fields=None
     ):
-        if not self.slug:
-            self.slug = slugify(self.title)
+        self.slug = slugify(self.title)
         super().save(force_insert, force_update, using, update_fields)
