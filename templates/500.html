@@ -1,0 +1,24 @@
+{% extends 'main/template.html' %}
+{% load static %}
+{% block title %}
+
+    Внутрення ошибка сервера (500)
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="flex-element">
+
+        <h2>Внутрення ошибка сервера.</h2>
+
+        <img src="{% static 'main/images/500.gif' %}" alt="">
+
+        <a style="margin-top: 20px;" href="{% url 'home' %}">Вернуться на главную</a>
+    </div>
+
+
+
+
+{% endblock %}

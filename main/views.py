@@ -60,4 +60,4 @@ def about(request):
 
 
 def error_404(request, exception):
-    return render(request, 'main/404.html', status=404)
+    return render(request, 'main/../templates/404.html', status=404)

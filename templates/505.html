@@ -1,0 +1,24 @@
+{% extends 'main/template.html' %}
+{% load static %}
+{% block title %}
+
+    Версия HTML не поддерживается
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="flex-element">
+
+        <h2>Данная версия HTML не поддерживается.</h2>
+
+        <img src="{% static 'main/images/505.gif' %}" alt="">
+
+        <a style="margin-top: 20px;" href="{% url 'home' %}">Вернуться на главную</a>
+    </div>
+
+
+
+
+{% endblock %}
