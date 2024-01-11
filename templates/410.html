@@ -1,0 +1,26 @@
+{% extends 'main/template.html' %}
+{% load static %}
+{% block title %}
+
+    Упс... Ошибочка
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="flex-element">
+
+        <h2>Когда-то здесь что-то было, но теперь здесь пусто.</h2>
+        <br>
+        <br>
+        <h5>Да поможет тебе Бог.</h5>
+        <img src="{% static 'main/images/410.gif' %}" alt="">
+
+        <a style="margin-top: 20px;" href="{% url 'home' %}">Вернуться на главную</a>
+    </div>
+
+
+
+
+{% endblock %}

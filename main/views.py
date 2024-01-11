@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseGone
 
 # Create your views here.
 from main.forms import AddNewsForm
@@ -59,5 +59,5 @@ def about(request):
     return render(request, 'main/about.html')
 
 
-def error_404(request, exception):
-    return render(request, 'main/../templates/404.html', status=404)
+def error_410(request):
+    return render(request, '410.html', status=410)
