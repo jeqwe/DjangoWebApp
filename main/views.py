@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseGone
+from django.core.exceptions import PermissionDenied
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse, HttpResponseGone, HttpResponseServerError
 
 # Create your views here.
 from main.forms import AddNewsForm
@@ -61,3 +62,12 @@ def about(request):
 
 def error_410(request):
     return render(request, '410.html', status=410)
+
+
+def set_like(request, post_id):
+    if request.POST:
+        raise PermissionDenied()
+    post = get_object_or_404(News, id=post_id)
+    post.likes_count += 1
+    post.save()
+    return redirect('news')

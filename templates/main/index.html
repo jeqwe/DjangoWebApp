@@ -29,6 +29,7 @@
 
             </div>
         {% endif %}
+        <p class="post-likes"><a href="{% url 'add_like' post_id=last_post.id %}"><i class="fa fa-heart"></i> {{ last_post.likes_count }}</a></p>
     <p class="post-text"> {{ last_post.teaser }}</p>
         <a href="{% url 'post_by_slug' last_post.slug %}" class="no-text-decoration read-more"><p>Читать полностью
              <i class="fa fa-arrow-right"></i></p></a>

@@ -404,3 +404,7 @@ footer{
 .last-news:hover{
     animation: none;
 }
+
+.post-likes a{
+    text-decoration: none;
+}

@@ -22,6 +22,7 @@ class News(models.Model):
                                     'possimus provident quis quos saepe? Animi cum distinctio dolore '
                                     'dolores et tempore, totam?')
     moderated = models.BooleanField(verbose_name="Опубликовать", default=False)
+    likes_count = models.PositiveIntegerField(verbose_name='Количество лайков', default=0)
 
     def __str__(self):
         return self.title
