@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -37,3 +38,13 @@ class News(models.Model):
     ):
         self.slug = slugify(self.title)
         super().save(force_insert, force_update, using, update_fields)
+
+
+class UserLikes(models.Model):
+    user = models.ForeignKey(User, to_field='id', on_delete=models.DO_NOTHING)
+    post = models.ForeignKey(News, to_field='id', on_delete=models.DO_NOTHING)
+
+    class Meta:
+        verbose_name = 'Лайк'
+        verbose_name_plural = 'Лайки'
+

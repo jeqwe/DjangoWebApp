@@ -4,6 +4,17 @@
       <img class="pulse-animation" src="{% static 'main/images/logo.svg' %}" alt="">
     </div>
 
+    <div class="user-panel revealator-slideleft revealator-delay3 revealator-duration5">
+        <i class="fa fa-user" style="margin-top: 3.5vh;"></i>
+        {% if request.user.is_authenticated %}
+            <span class="username">{{ request.user.username }}</span>
+            <a href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+            <a href="{% url 'login' %}">Вход</a> /
+            <a href="{% url 'signup' %}">Регистрация</a>
+        {% endif %}
+    </div>
+
     <div class="nav-topbar flex-container">
         <div class="nav-element">
             <a href="{% url 'home' %}">Главная</a>
@@ -18,5 +29,6 @@
             <a href="{% url 'about' %}">О нас</a>
         </div>
     </div>
+
 
 </nav>

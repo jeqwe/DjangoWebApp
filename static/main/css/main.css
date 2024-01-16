@@ -408,3 +408,22 @@ footer{
 .post-likes a{
     text-decoration: none;
 }
+
+.user-panel{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 20px;
+    color: white;
+    gap: 5px;
+    line-height: 9vh;
+    vertical-align: central;
+}
+
+.user-panel a{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+
+}

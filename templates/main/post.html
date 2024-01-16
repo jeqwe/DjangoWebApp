@@ -29,7 +29,13 @@
     <div class="flex-container post-meta-info">
         <div class="post-date"> {{ post.creation_date }}</div>
         <div class="post-author"> <i class="fa fa-user" aria-hidden="true"></i>    {{ post.author }}</div>
-        <div class="post-likes"><a href="{% url 'add_like' post_id=post.id %}"><i class="fa fa-heart"></i> {{ post.likes_count }}</a></div>
+        {% if request.user.is_autheticated %}
+        <div class="post-likes">
+            <a href="{% url 'add_like' post_id=post.id %}">
+                <i class="fa fa-heart"></i> {{ post.likes_count }}
+            </a>
+        </div>
+        {% endif %}
     </div>
         <br>
         <br>
