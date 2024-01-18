@@ -1,5 +1,11 @@
 from main import views
 from django.urls import path, include
+from django.conf.urls import handler404, handler500, handler403
+
+handler404 = views.error404
+handler403 = views.error403
+handler500 = views.error500
+
 
 urlpatterns = [
     path('', views.index, name='home'),
